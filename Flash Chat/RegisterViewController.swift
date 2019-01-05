@@ -14,7 +14,7 @@ import Firebase
 class RegisterViewController: UIViewController {
 
     
-    //IBOutlets
+    //MARK: - IBOutlets
     @IBOutlet var emailTextfield: UITextField!
     @IBOutlet var passwordTextfield: UITextField!
     
@@ -50,10 +50,11 @@ class RegisterViewController: UIViewController {
             }
         }
         
-        
-        
     }
     
+    /**
+     This method check validation of user cerdentials.
+     */
     func isValid() -> Bool{
         if (self.passwordTextfield.text?.isEmpty)! || (self.passwordTextfield.text?.isEmpty)!{
             return false

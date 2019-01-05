@@ -10,12 +10,16 @@ import UIKit
 
 class CustomMessageCell: UITableViewCell {
 
-
+    //MARK: - IBOutlets
     @IBOutlet var messageBackground: UIView!
     @IBOutlet var avatarImageView: UIImageView!
     @IBOutlet var messageBody: UILabel!
     @IBOutlet var senderUsername: UILabel!
     
+    //MARK: - Properties
+    static let identifier = "customMessageCell"
+    
+    //MARK: - Lifecycle
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code goes here
@@ -23,6 +27,5 @@ class CustomMessageCell: UITableViewCell {
         
         
     }
-
 
 }
