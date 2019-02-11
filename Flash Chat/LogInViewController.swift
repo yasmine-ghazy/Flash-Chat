@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import iOSDropDown
 
 /**
  This class handle siging in for existing users to our app with their cerdentials.
@@ -14,13 +15,24 @@ import Firebase
 class LogInViewController: UIViewController {
     
     //MARK: - IBOutlets
-    @IBOutlet var emailTextfield: UITextField!
+    @IBOutlet var emailTextfield: DropDown!
     @IBOutlet var passwordTextfield: UITextField!
     
     
     //MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        // The list of array to display. Can be changed dynamically
+        emailTextfield.optionArray = ["Option 1", "Option 2", "Option 3"]
+        //Its Id Values and its optional
+        emailTextfield.optionIds = [1,23,54,22]
+        
+        // The the Closure returns Selected Index and String
+        emailTextfield.didSelect{(selectedText , index ,id) in
+            print(selectedText)
+        }
+        
+        emailTextfield.isSearchEnable = true
         
     }
     
